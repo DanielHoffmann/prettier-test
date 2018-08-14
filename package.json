@@ -2,21 +2,16 @@
   "name": "prettier-test",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "precommit": "lint-staged && npm run eslint"
+    "precommit": "npm run prettier && npm run eslint",
+    "prettier": "prettier --tab-width 4 --single-quote --trailing-comma none --write src/index.js",
+    "eslint": "eslint src"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "eslint": "^5.3.0",
-    "lint-staged": "^7.2.2",
     "prettier": "1.4.2"
-  },
-  "lint-staged": {
-    "*.js": [
-      "prettier --tab-width 4 --single-quote --trailing-comma none --write",
-      "git add"
-    ]
   }
 }
